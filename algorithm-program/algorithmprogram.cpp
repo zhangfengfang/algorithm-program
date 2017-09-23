@@ -3,18 +3,22 @@
 #include "iostream"
 using namespace std;
 template <class T>
-T rsum(T a[], int n)
+int  max(T a[], int n)
 {
-	if (n > 0)
+	int pose = 0;
+	for (int i = 1; i < n; i++)
 	{
-		return  rsum(a, n - 1) + a[n - 1];
+		if (a[pose] < a[i])
+			pose = i;
+
+
 	}
-	return 0;
+	return pose;
 }
 int main()
 {
 	int a[] = {1,2,3,4,5,6,7,8,9};
-	cout <<rsum(a,size(a))<< endl;
+	cout <<max(a,size(a))<< endl;
 	system("pause");
 	return 0;
 
