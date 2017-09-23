@@ -3,22 +3,33 @@
 #include "iostream"
 using namespace std;
 template <class T>
-T ji(T a[], int n,int x)
+T paixu(T a[], int n)
 {
-	int y=a[n-1];
-
-	for(int i = n; i > 1; i--) 
+	int i = 0;
+	int j=0;
+	 
+	for (int j = 1; j < n ; j++)
 	{
-		
-		y = y* x + a[i - 2];
+		for (int i = 0; i < n - j; i++)
+		{
+			if (a[i] > a[i + 1])
+			{
+				a[i + 1] = a[i];
+			}
+
+			
+
+		}
+		cout << a[n-j-1]<<endl;
 	}
-	return y;
+	return 0;
+	
 }
+
 int main()
 {
-	int x = 2;
 	int a[] = {1,2,3,4,5,6,7,8,9};
-	cout << ji(a,size(a),x)<< endl;
+	 paixu(a,size(a));
 	system("pause");
 	return 0;
 
