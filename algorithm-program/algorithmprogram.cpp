@@ -3,22 +3,22 @@
 #include "iostream"
 using namespace std;
 template <class T>
-int  max(T a[], int n)
+T ji(T a[], int n,int x)
 {
-	int pose = 0;
-	for (int i = 1; i < n; i++)
+	int y=a[n-1];
+
+	for(int i = n; i > 1; i--) 
 	{
-		if (a[pose] < a[i])
-			pose = i;
-
-
+		
+		y = y* x + a[i - 2];
 	}
-	return pose;
+	return y;
 }
 int main()
 {
+	int x = 2;
 	int a[] = {1,2,3,4,5,6,7,8,9};
-	cout <<max(a,size(a))<< endl;
+	cout << ji(a,size(a),x)<< endl;
 	system("pause");
 	return 0;
 
